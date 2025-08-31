@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Concert, Ticket
 
-# Create your views here.
+
+def concerts_view(request):
+    concerts = Concert.objects.all
+    print(concerts)
