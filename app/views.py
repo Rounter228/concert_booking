@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from .models import Concert, Ticket
+from .models import Concert
 
-
-def concerts_view(request):
-    concerts = Concert.objects.all
-    print(concerts)
+def home(request):
+    concerts = Concert.objects.all()
+    return render(request, "home.html", {"concerts": concerts})
